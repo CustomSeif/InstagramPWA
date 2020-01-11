@@ -1,0 +1,56 @@
+.Nav {
+    position: fixed;
+    z-index: 51;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2.75rem;
+    border-top: 0.05rem solid rgba(0,0,0,0.15);
+    background-color: #ffffff;
+
+    & > a {
+        width: 2rem;
+        height: 2rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__home {
+        background-image: url(/assets/home.png);
+
+        &.active {
+            background-image: url(/assets/home-focused.png);
+        }
+    }
+
+    &__search {
+        background-image: url(/assets/search.png);
+        
+        &.active {
+            background-image: url(/assets/search-focused.png);
+        }
+    }
+
+    &__upload {
+        background-image: url(/assets/upload.png);
+    }
+
+    &__likes {
+        background-image: url(/assets/heart.png);
+
+        &.active {
+            background-image: url(/assets/heart-focused.png);
+        }
+    }
+    
+    &__account {
+        background-image: url(/assets/account.png);
+
+        &.active {
+            background-image: url(/assets/account-focused.png);
+        }
+    }
+}

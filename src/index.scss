@@ -41,3 +41,9 @@ body {
         font-size: 75%;
     }
 }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

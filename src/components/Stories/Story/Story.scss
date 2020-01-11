@@ -1,0 +1,67 @@
+.Story {
+    position: relative;
+    margin: 0 0.3rem;
+
+    $storyHeightWidth: 4.5rem;
+
+    &__profile-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $storyHeightWidth;
+        height: $storyHeightWidth;
+
+        &__img {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 80%;
+            height: 80%;
+            border-radius: 100%;
+            opacity: 0;
+
+            &.true {
+                animation: fadeIn 0.25s forwards;
+            }
+        }
+
+        &__border {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            width: $storyHeightWidth;
+            height: $storyHeightWidth;
+    
+            circle {
+                stroke-width: 0.7px;
+                fill: transparent;
+                stroke-dasharray: 0;
+                stroke-dashoffset: 0;
+
+                &:active {
+                    animation-name: dashRotate;
+                    animation-duration: 1.5s;
+                    animation-timing-function: ease-in;
+                    animation-iteration-count: 1;
+                    animation-direction: reverse;
+                }
+            }
+        }
+    }
+
+    &__name {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+}
+
+@keyframes dashRotate {
+    0%  {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 3;
+        stroke-dashoffset: 0.5;
+    }
+}
