@@ -12,6 +12,7 @@ CREATE TABLE "profiles" (
     "name" TEXT NOT NULL,
     "tag" TEXT NOT NULL,
     "image_url" TEXT NOT NULL,
+    "lazy_url" TEXT NOT NULL,
     "followers" INTEGER NOT NULL DEFAULT 0,
     "following" INTEGER NOT NULL DEFAULT 0
 );
