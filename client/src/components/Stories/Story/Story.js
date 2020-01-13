@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import "./Story.css"
-import axios from "axios"
 
 class Story extends Component {
     state = {

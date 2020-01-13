@@ -1,35 +1,67 @@
 .Post {
-    // &__header {
-    //     display: flex;
-    //     align-items: center;
-    //     width: 100%;
-    //     height: 3.75rem;
-    //     padding: 0 1rem;
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 3.75rem;
+        padding: 0 1rem;
 
-    //     &__profile-image {
-    //         border-radius: 100%;
-    //         overflow: hidden;
-    //         height: 2rem;
-    //         width: 2rem;
+        &__profile-image {
+            position: relative;
+            border-radius: 100%;
+            overflow: hidden;
+            height: 2rem;
+            width: 2rem;
+            background-color: #eee;
 
-    //         &__img {
-    //             width: 2rem;
-    //             height: 2rem;
-    //             background-color: #eeeeee;
-    //             opacity: 0;
+            &__lazy {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                opacity: 0;
+    
+                &.true {
+                    animation: fadeIn 0.25s forwards;
+                }
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: blur(1rem);
+                }
+            }
+    
+            &__full {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                opacity: 0;
+    
+                &.true {
+                    animation: fadeIn 0.25s forwards;
+                }
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
 
-    //             &.true {
-    //                 animation: fadeIn 0.25s forwards;
-    //             }
-    //         }
-    //     }
-
-    //     &__name {
-    //         text-transform: capitalize;
-    //         font-size: 0.8rem;
-    //         margin-left: 1rem;
-    //     }
-    // }
+        &__name {
+            text-transform: capitalize;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }
+    }
 
     &__image {
         position: relative;
@@ -98,27 +130,27 @@
         }
 
         &__like {
-            background-image: url(icons/heart-thick.png);
+            background-image: url(/assets/heart-thick.png);
 
             &:focus, &:active {
-                background-image: url(icons/heart-liked.png);
+                background-image: url(/assets/heart-liked.png);
             }
         }
 
         &__comment {
-            background-image: url(icons/comment.png);
+            background-image: url(/assets/comment.png);
         }
 
         
         &__forward {
-            background-image: url(icons/paper-plane.png);
+            background-image: url(/assets/paper-plane.png);
         }
 
         &__bookmark {
-            background-image: url(icons/bookmark.png);
+            background-image: url(/assets/bookmark.png);
 
             &:hover, &:active {
-                background-image: url(icons/bookmark-focused.png);
+                background-image: url(/assets/bookmark-focused.png);
             }
         }
     }

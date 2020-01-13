@@ -21,6 +21,9 @@ const Posts = () => {
                             imageMediumURL={post.image_medium_url}
                             lazyURL={post.lazy_url}
                             aspectRatio={post.aspect_ratio}
+                            name={post.name}
+                            profileImageURL={post.profile_image_url}
+                            profileLazyURL={post.profile_lazy_url}
                         />
                     )
                 })

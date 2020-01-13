@@ -1,11 +1,9 @@
 import React, { Component } from "react"
 import "./Post.css"
-import axios from "axios"
 
 class Post extends Component {
     state = {
-        name: "",
-        profileImage: "",
+        lazyProfileImageLoaded: false,
         profileImageLoaded: false,
         lazyImageLoaded: false,
         imageLoaded: false
@@ -14,17 +12,20 @@ class Post extends Component {
     render() {
         return  (
             <div className="Post">
-                {/* <div className="Post__header">
+                {/* Header */}
+                <div className="Post__header">
                     <div className="Post__header__profile-image">
-                        <img alt={this.state.name}
-                            className={`Post__header__profile-image__img ${this.state.profileImageLoaded}`}
-                            onLoad={() => this.setState({ profileImageLoaded: true })}
-                            src={this.state.profileImage}
-                        />
+                        <div className={`Post__header__profile-image__lazy ${this.state.lazyImageLoaded}`}>
+                            <img src={this.props.profileLazyURL} alt="Random Lazy" onLoad={() => this.setState({ lazyProfileImageLoaded: true })} />
+                        </div>
+
+                        <div className={`Post__header__profile-image__full ${this.state.imageLoaded}`}>
+                            <img src={this.props.profileImageURL} alt="Random" onLoad={() => this.setState({ profileImageLoaded: true })} />
+                        </div>
                     </div>
 
-                    <h5 className="Post__header__name">{this.state.name}</h5>
-                </div> */}
+                    <h5 className="Post__header__name">{this.props.name}</h5>
+                </div>
 
                 {/* Image */}
                 <div className="Post__image">
