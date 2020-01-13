@@ -1,9 +1,10 @@
 import React from "react"
+import LiveCamera from "../components/LiveCamera/LiveCamera"
 
 const Camera = () => {
     return (
         <div className="Camera">
-            <h1>Camera</h1>
+            <LiveCamera />
         </div>
     )
 }
