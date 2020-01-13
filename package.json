@@ -2,11 +2,15 @@
     "name": "instagram-pwa",
     "version": "1.0.0",
     "description": "\"An instagram clone as a progressive web app.\"",
-    "main": "server/index.js",
     "repository": "https://github.com/CustomSeif/InstagramPWA.git",
     "author": "Seif <msk-7@outlook.com>",
     "license": "UNLICENSED",
     "private": true,
+    "main": "server/index.js",
+    "scripts": {
+        "start": "node server/index.js",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    },
     "dependencies": {
         "express": "^4.17.1",
         "pg": "^7.17.1"
