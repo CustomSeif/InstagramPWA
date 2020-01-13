@@ -11,20 +11,6 @@ class Post extends Component {
         imageLoaded: false
     }
 
-    // componentDidMount() {
-    //     axios
-    //         .get("https://uinames.com/api/?ext")
-    //         .then(({ data }) => {
-    //             const name = `${data.name } ${data.surname}`
-    //             const profileImage = data.photo
-
-    //             this.setState({
-    //                 name,
-    //                 profileImage
-    //             })
-    //         })
-    // }
-
     render() {
         return  (
             <div className="Post">
