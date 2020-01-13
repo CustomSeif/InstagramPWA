@@ -1,40 +1,84 @@
 .Post {
-    &__header {
-        display: flex;
-        align-items: center;
+    // &__header {
+    //     display: flex;
+    //     align-items: center;
+    //     width: 100%;
+    //     height: 3.75rem;
+    //     padding: 0 1rem;
+
+    //     &__profile-image {
+    //         border-radius: 100%;
+    //         overflow: hidden;
+    //         height: 2rem;
+    //         width: 2rem;
+
+    //         &__img {
+    //             width: 2rem;
+    //             height: 2rem;
+    //             background-color: #eeeeee;
+    //             opacity: 0;
+
+    //             &.true {
+    //                 animation: fadeIn 0.25s forwards;
+    //             }
+    //         }
+    //     }
+
+    //     &__name {
+    //         text-transform: capitalize;
+    //         font-size: 0.8rem;
+    //         margin-left: 1rem;
+    //     }
+    // }
+
+    &__image {
+        position: relative;
         width: 100%;
-        height: 3.75rem;
-        padding: 0 1rem;
 
-        &__profile-image {
-            border-radius: 100%;
+        &__placeholder {
+            background-color: #eee;
+        }
+
+        &__lazy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            height: 2rem;
-            width: 2rem;
+            opacity: 0;
 
-            &__img {
-                width: 2rem;
-                height: 2rem;
-                background-color: #eeeeee;
-                opacity: 0;
+            &.true {
+                animation: fadeIn 0.25s forwards;
+            }
 
-                &.true {
-                    animation: fadeIn 0.25s forwards;
-                }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: blur(1rem);
             }
         }
 
-        &__name {
-            text-transform: capitalize;
-            font-size: 0.8rem;
-            margin-left: 1rem;
-        }
-    }
+        &__full {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0;
 
-    &__image {
-        display: block;
-        width: 100%;
-        height: auto;
+            &.true {
+                animation: fadeIn 0.25s forwards;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 
     &__engagement {

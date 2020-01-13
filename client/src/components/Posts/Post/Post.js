@@ -7,27 +7,28 @@ class Post extends Component {
         name: "",
         profileImage: "",
         profileImageLoaded: false,
+        lazyImageLoaded: false,
         imageLoaded: false
     }
 
-    componentDidMount() {
-        axios
-            .get("https://uinames.com/api/?ext")
-            .then(({ data }) => {
-                const name = `${data.name } ${data.surname}`
-                const profileImage = data.photo
+    // componentDidMount() {
+    //     axios
+    //         .get("https://uinames.com/api/?ext")
+    //         .then(({ data }) => {
+    //             const name = `${data.name } ${data.surname}`
+    //             const profileImage = data.photo
 
-                this.setState({
-                    name,
-                    profileImage
-                })
-            })
-    }
+    //             this.setState({
+    //                 name,
+    //                 profileImage
+    //             })
+    //         })
+    // }
 
     render() {
         return  (
             <div className="Post">
-                <div className="Post__header">
+                {/* <div className="Post__header">
                     <div className="Post__header__profile-image">
                         <img alt={this.state.name}
                             className={`Post__header__profile-image__img ${this.state.profileImageLoaded}`}
@@ -37,14 +38,24 @@ class Post extends Component {
                     </div>
 
                     <h5 className="Post__header__name">{this.state.name}</h5>
+                </div> */}
+
+                {/* Image */}
+                <div className="Post__image">
+                    <div className="Post__image__placeholder"
+                        style={{ paddingBottom: `${this.props.aspectRatio}%` }}>
+                    </div>
+
+                    <div className={`Post__image__lazy ${this.state.lazyImageLoaded}`}>
+                        <img src={this.props.lazyURL} alt="Random Lazy" onLoad={() => this.setState({ lazyImageLoaded: true })} />
+                    </div>
+
+                    <div className={`Post__image__full ${this.state.imageLoaded}`}>
+                        <img src={this.props.imageURL} alt="Random" onLoad={() => this.setState({ imageLoaded: true })} />
+                    </div>
                 </div>
 
-                <img alt="Random"
-                    className={`Post__image ${this.state.imageLoaded}`}
-                    onLoad={() => this.setState({ imageLoaded: true })}
-                    src={this.props.image}
-                />
-
+                {/* Engagement */}
                 <div className="Post__engagement">
                     <div className="Post__engagement__actions">
                         <button className="Post__engagement__like"></button>
