@@ -7,6 +7,7 @@ router.get("/profiles", async (_, response) => {
         const query = await database.query(`
             SELECT *
             FROM public.profiles
+            ORDER BY RANDOM()
             LIMIT 10;
         `)
         response.json(query.rows)
