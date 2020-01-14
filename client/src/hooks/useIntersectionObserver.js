@@ -19,7 +19,7 @@ const useIntersectionObserver = (ref, isSingleUse = true) => {
         intersectionObserver.observe(ref.current)
 
         return () => isMounted.current = false
-    }, [])
+    }, [ref, isSingleUse])
 
     return [intersected]
 }
