@@ -1,8 +1,18 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import "./Nav.css"
 
-const Nav = () => {
+const Nav = ({ type }) => {
+    if (type === "direct") return (
+        <nav className="Nav">
+            <Link className="Nav__camera" to="/camera">
+                <img src="assets/camera.png" alt="camera icon" />
+
+                <span>Camera</span>
+            </Link>
+        </nav>
+    )
+
     return (
         <nav className="Nav">
             <NavLink exact className="Nav__home" to="/"></NavLink>

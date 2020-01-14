@@ -53,4 +53,21 @@
             background-image: url(/assets/account-focused.png);
         }
     }
+
+    &__camera {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+            width: 2rem;
+        }
+
+        span {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            color: black;
+        }
+    }
 }

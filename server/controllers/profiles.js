@@ -8,7 +8,7 @@ router.get("/profiles", async (_, response) => {
             SELECT *
             FROM public.profiles
             ORDER BY RANDOM()
-            LIMIT 10;
+            LIMIT 15;
         `)
         response.json(query.rows)
     }
