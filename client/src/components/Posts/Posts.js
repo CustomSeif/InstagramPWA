@@ -18,7 +18,6 @@ const Posts = () => {
                     return (
                         <Post key={index}
                             imageURL={post.image_url}
-                            imageMediumURL={post.image_medium_url}
                             lazyURL={post.lazy_url}
                             aspectRatio={post.aspect_ratio}
                             name={post.name}

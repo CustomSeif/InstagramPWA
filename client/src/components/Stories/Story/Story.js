@@ -1,49 +1,56 @@
-import React, { Component } from "react"
+import React, { useRef, useState } from "react"
 import "./Story.css"
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver"
 
-class Story extends Component {
-    state = {
-        lazyImageLoaded: false,
-        imageLoaded: false
-    }
+const Story = ({ aspectRatio, imageURL, lazyURL, name }) => {
+    const [lazyImageLoaded, setLazyImageLoaded] = useState(false)
+    const [imageLoaded, setImageLoaded] = useState(false)
 
-    render() {
-        return  (
-            <div className="Story">
-                <div className="Story__profile-image">
-                    <div className="Story__profile-image__img">
-                        <div className="Story__profile-image__img__placeholder"
-                            style={{ paddingBottom: `${this.props.aspectRatio}%` }}>
-                        </div>
+    const ref = useRef()
 
-                        <div className={`Story__profile-image__img__lazy ${this.state.lazyImageLoaded}`}>
-                            <img src={this.props.lazyURL} alt="" onLoad={() => this.setState({ lazyImageLoaded: true })} />
-                        </div>
+    const [intersected] = useIntersectionObserver(ref)
 
-                        <div className={`Story__profile-image__img__full ${this.state.imageLoaded}`}>
-                            <img src={this.props.imageURL} alt="Random" onLoad={() => this.setState({ imageLoaded: true })} />
-                        </div>
+    return  (
+        <div className="Story" ref={ref}>
+            <div className="Story__profile-image">
+                <div className="Story__profile-image__img">
+                    <div className="Story__profile-image__img__placeholder"
+                        style={{ paddingBottom: `${aspectRatio}%` }}>
                     </div>
 
-                    <svg className="Story__profile-image__border" viewBox="0 0 24 24">
-                        <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stopColor="#f12711" />
-                                <stop offset="70%" stopColor="#f7b733" />
-                                <stop offset="100%" stopColor="#E94057" />
-                            </linearGradient>
-                        </defs>
+                    <div className={`Story__profile-image__img__lazy ${lazyImageLoaded}`}>
+                        <img src={lazyURL} alt="" onLoad={() => setLazyImageLoaded(true)} />
+                    </div>
 
-                        <circle cx="12" cy="12" r="11" stroke="url(#gradient)"></circle>
-                    </svg>
+                    {
+                        intersected ?
+                        (
+                            <div className={`Story__profile-image__img__full ${imageLoaded}`}>
+                                <img src={imageURL} alt="Random" onLoad={() => setImageLoaded(true)} />
+                            </div>
+                        ) :
+                        null
+                    }
                 </div>
 
-                <h6 className="Story__name">
-                    {`${this.props.name.slice(0, 9).trim()}...`}
-                </h6>
+                <svg className="Story__profile-image__border" viewBox="0 0 24 24">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#f12711" />
+                            <stop offset="70%" stopColor="#f7b733" />
+                            <stop offset="100%" stopColor="#E94057" />
+                        </linearGradient>
+                    </defs>
+
+                    <circle cx="12" cy="12" r="11" stroke="url(#gradient)"></circle>
+                </svg>
             </div>
-        )
-    }
+
+            <h6 className="Story__name">
+                {`${name.slice(0, 9).trim()}...`}
+            </h6>
+        </div>
+    )
 }
 
 export default Story
