@@ -1,0 +1,23 @@
+.Account__gallery {
+    margin-top: 1rem;
+
+    &__nav {
+        display: flex;
+
+        button {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+
+            &.true {
+                border-bottom: solid 0.1rem black;
+            }
+
+            img {
+                width: 2.25rem;
+            }
+        }
+    }
+}

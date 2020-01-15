@@ -3,6 +3,7 @@ import Header from "../components/Header/Header"
 import Nav from "../components/Nav/Nav"
 import NavSpacer from "../components/Nav/NavSpacer"
 import AccountHeader from "../components/Account/AccountHeader/AccountHeader"
+import AccountGallery from "../components/Account/AccountGallery/AccountGallery"
 
 const Account = () => {
     return (
@@ -10,6 +11,8 @@ const Account = () => {
             <Header type="account" />
 
             <AccountHeader />
+
+            <AccountGallery />
 
             <Nav />
             <NavSpacer />
