@@ -20,7 +20,7 @@ const ExplorePost = ({ imageMediumURL, lazyURL }) => {
             </div>
 
             {
-                intersected ?
+                intersected && lazyImageLoaded ?
                 (
                     <div className={`ExplorePost__full ${imageLoaded}`}>
                         <img src={imageMediumURL} alt="Random" onLoad={() => setImageLoaded(true)} />

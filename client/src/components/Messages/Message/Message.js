@@ -19,7 +19,7 @@ const Message = ({ name, imageURL, lazyURL }) => {
                 </div>
 
                 {
-                    intersected ?
+                    intersected && lazyImageLoaded ?
                     (
                         <div className={`Message__image__full ${imageLoaded}`}>
                             <img src={imageURL} alt="Random" onLoad={() => setImageLoaded(true)} />

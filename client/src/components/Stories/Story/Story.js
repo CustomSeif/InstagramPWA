@@ -23,7 +23,7 @@ const Story = ({ aspectRatio, imageURL, lazyURL, name }) => {
                     </div>
 
                     {
-                        intersected ?
+                        intersected && lazyImageLoaded ?
                         (
                             <div className={`Story__profile-image__img__full ${imageLoaded}`}>
                                 <img src={imageURL} alt="Random" onLoad={() => setImageLoaded(true)} />

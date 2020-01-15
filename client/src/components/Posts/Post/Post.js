@@ -29,7 +29,7 @@ const Post = ({
                     </div>
 
                     {
-                        intersected ?
+                        intersected && lazyImageLoaded ?
                         (
                             <div className={`Post__header__profile-image__full ${profileImageLoaded}`}>
                                 <img src={profileImageURL} alt="Random" onLoad={() => setProfileImageLoaded(true)} />
@@ -53,7 +53,7 @@ const Post = ({
                 </div>
 
                 {
-                    intersected ?
+                    intersected && lazyImageLoaded ?
                     (
                         <div className={`Post__image__full ${imageLoaded}`}>
                             <img src={imageURL} alt="Random" onLoad={() => setImageLoaded(true)} />
