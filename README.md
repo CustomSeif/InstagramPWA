@@ -18,3 +18,8 @@ The lazy image is a 25px resized image from the original. Generated using the sh
 The full image waits for the lazy image to finish loading and for the user to scroll it into view to start loading. Detecting if the image has been scrolled into view is done with Intersection Observer.
 
 ![InstagramPWA Lazy Loading](/assets/Instagram-lazy-loading.gif)
+
+## Live Camera
+When the camera icon is clicked a live camera will open after the browser asks for permission to use your camera. The live camera is a canvas to which a bitmap of every video frame recieved from the camera is drawn.
+
+![InstagramPWA Live Camera](/assets/Instagram-live-camera.gif)
