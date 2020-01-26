@@ -6,7 +6,7 @@ InstagramPWA is a React.js application that aims to mimic the user interface and
 ## Installability
 Progressive web apps aim to make web apps seem more like native apps. InstagramPWA is installable thanks to service workers.
 
-![Instagram Progessive Web App](/assets/Instagram-pwa.gif)
+![Instagram Progessive Web App](/client/public/assets/Instagram-pwa.gif)
 
 ## Lazy Loading
 Instagram loads low resolution images and blurs them until the full image is downloaded. There are three main components to achieving this effect:
@@ -17,9 +17,9 @@ The lazy image is a 25px resized image from the original. Generated using the sh
 ### The Full Image
 The full image waits for the lazy image to finish loading and for the user to scroll it into view to start loading. Detecting if the image has been scrolled into view is done with Intersection Observer.
 
-![InstagramPWA Lazy Loading](/assets/Instagram-lazy-loading.gif)
+![InstagramPWA Lazy Loading](/client/public/assets/Instagram-lazy-loading.gif)
 
 ## Live Camera
 When the camera icon is clicked a live camera will open after the browser asks for permission to use your camera. The live camera is a canvas to which a bitmap of every video frame recieved from the camera is drawn.
 
-![InstagramPWA Live Camera](/assets/Instagram-live-camera.gif)
+![InstagramPWA Live Camera](/client/public/assets/Instagram-live-camera.gif)
