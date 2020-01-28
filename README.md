@@ -22,4 +22,4 @@ The full image waits for the lazy image to finish loading and for the user to sc
 ## Live Camera
 When the camera icon is clicked a live camera will open after the browser asks for permission to use your camera. The live camera is a canvas to which a bitmap of every video frame received from the camera is drawn.
 
-![InstagramPWA Live Camera](/client/public/assets/Instagram-live-camera.gif)
+![InstagramPWA Live Camera](/client/public/assets/Instagram-pwa-live-camera.gif)
